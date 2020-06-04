@@ -7,11 +7,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppGroceryComponent } from './app-grocery/app-grocery.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppGroceryComponent
+    AppGroceryComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

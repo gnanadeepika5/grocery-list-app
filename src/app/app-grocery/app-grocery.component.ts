@@ -7,11 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['../../assets/bootstrap-4.5.0-dist/css/bootstrap.min.css']
 })
 export class AppGroceryComponent {
-  task: string;
-  tasks = [];
+  item: string;
+  list = [];
 
   onClick(){
-    this.tasks.push({name: this.task});
-  this.task = '';
+    this.list.push({name: this.item});
+  this.item = '';
 }
 }

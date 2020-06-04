@@ -1,4 +1,4 @@
-<p>app-grocery works!</p>
+<!-- <p>app-grocery works!</p>
 <div>
   <h2>Grocery List Manager</h2>
   <div class="row">
@@ -9,7 +9,7 @@
           <button class="btn-btn-primary" type="button" (click)="onClick()">
             <i class="fas fa-plus-square"></i>Add
 
-            <!-- <span class="glyphicon glyphicon-ok"></span> -->
+             <span class="glyphicon glyphicon-ok"></span>
             </button>
         </div>
 
@@ -18,13 +18,58 @@
     </div>
 
   </div>
-  <br/>
-  <!-- <span>
+  <br/>-->
+  <!--
+  <span>
     {{tasks | json}}
 </span> -->
   <!-- <ul class="list-group">
     <li *ngFor="let tast of tasks" class="list-group-item">
       <span>{{task.name}}</span>
     </li>
-  </ul> -->
+  </ul>
+</div> -->
+
+
+
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">BRAND</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Login <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Sign Up</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1>Add Your Grocery Iteams</h1>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="enter grocery item" id="txtSearch" aria-label="Username" aria-describedby="button-addon1" [(ngModel)]="item">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" id="cart-icon"(click)="onClick()" >
+             <img src="../../assets/shopping-bag (1).svg" />
+
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div>
+    <ul id="show-list" class="list-group">
+      <li *ngFor="let item of list" class="list-group-item">
+        <span>{{item.name}}</span>
+      </li>
+    </ul>
+  </div>
+
 </div>
