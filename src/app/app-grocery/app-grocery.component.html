@@ -51,12 +51,13 @@
   </nav>
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h1>Add Your Grocery Iteams</h1>
+      <h1>Add Your Grocery Items</h1>
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="enter grocery item" id="txtSearch" aria-label="Username" aria-describedby="button-addon1" [(ngModel)]="item">
+        <input type="text" class="form-control" placeholder="enter grocery item" id="txtSearch" aria-label="Username" aria-describedby="button-addon1" [(ngModel)]="item.name">
         <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="cart-icon"(click)="onClick()" >
-             <img src="../../assets/shopping-bag (1).svg" />
+          <button class="btn btn-outline-secondary" type="button" id="cart-icon" (click)="addItemToList()" >
+             <!-- <img src="../../assets/shopping-bag (1).svg" /> -->
+             <i class="fas fa-cart-plus"></i>
 
           </button>
         </div>
@@ -65,11 +66,26 @@
     </div>
   </div>
   <div>
+    <span *ngIf="list">
+      Number of items in your list: {{list.length}}
+    </span>
     <ul id="show-list" class="list-group">
       <li *ngFor="let item of list" class="list-group-item">
         <span>{{item.name}}</span>
+        <span>
+          <button type="button" id="deleteitembutton" (click) = "deleteItemFromList(item)">
+            <i class="far fa-trash-alt"></i>
+          </button>
+        </span>
       </li>
     </ul>
+  </div>
+
+  <div>
+    <span [hidden]="hideErrorMsg" class="text-danger">{{errorMsg}}</span>
+    <span [hidden]="hideduplicateMsg" class="text-secondary">{{duplicateMsg}}</span>
+    <span [hidden]="hidevaliditemMsg" class="text-secondary">{{validitemMsg}}</span>
+    <span [hidden]="hidedeleteitemsuccessMsg" class="text-secondary">{{deleteitemsuccessMsg}}</span>
   </div>
 
 </div>
